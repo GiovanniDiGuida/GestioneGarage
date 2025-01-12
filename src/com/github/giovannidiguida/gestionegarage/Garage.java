@@ -4,6 +4,7 @@ import com.github.giovannidiguida.gestionegarage.exception.TargaVeicoloInesisten
 import com.github.giovannidiguida.gestionegarage.exception.VeicoloDuplicatoException;
 import com.github.giovannidiguida.gestionegarage.veicolo.Veicolo;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
@@ -39,15 +40,18 @@ public class Garage {
         return (List<Veicolo>) mappaVeicoli.values();
     }
 
-    //todo ancora da implementare
-    public List<Veicolo> cercaVeicoli(Predicate<Veicolo> filtro) {
-        return null;
+    public List<Veicolo> cercaVeicoli(Predicate<? super Veicolo> filtro) {
+        return mappaVeicoli.values()
+                .stream()
+                .filter(filtro)
+                .toList();
     }
 
     //todo ancora da implementare
-    public List<Veicolo> veicoliOrdinati() {
-        return null;
+    public List<Veicolo> veicoliOrdinati(Comparator<Veicolo> comparator) {
+        return mappaVeicoli.values()
+                .stream()
+                .sorted(comparator)
+                .toList();
     }
-
-
 }
