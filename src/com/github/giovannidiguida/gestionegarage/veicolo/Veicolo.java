@@ -20,7 +20,7 @@ public abstract class Veicolo implements Comparable<Veicolo> {
 
     //Deciso di evitare direttamente solo un eventuale crash. Non è specificato nell'es di aggiungere altre eccezioni, ma poteva starci bene nel caso una IllegalArgumentException
     //Formato auto "Tipo, Modello, Marca, Targa, Anno, Chilometraggio, Posti"
-    //Formato auto "Tipo, Modello, Marca, Targa, Anno, Chilometraggio, Cilindrata"
+    //Formato moto "Tipo, Modello, Marca, Targa, Anno, Chilometraggio, Cilindrata"
     public static Veicolo daStringa(String t) {
         Veicolo result = null;
 
@@ -35,7 +35,7 @@ public abstract class Veicolo implements Comparable<Veicolo> {
 
             if (valori[0].equalsIgnoreCase("auto")) {
                 result = new Auto(modello, marca, targa, anno, chilometraggio, postiCilindrata);
-            } else if (valori[1].equalsIgnoreCase("moto")) {
+            } else if (valori[0].equalsIgnoreCase("moto")) {
                 result = new Moto(modello, marca, targa, anno, chilometraggio, postiCilindrata);
             }
         } catch (NumberFormatException ignored) {
