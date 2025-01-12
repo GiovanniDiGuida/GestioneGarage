@@ -13,6 +13,10 @@ public class Moto extends Veicolo {
         return cilindrata * 10;
     }
 
+    public int getCilindrata() {
+        return cilindrata;
+    }
+
     @Override
     public String toString() {
         return "Moto{" +
