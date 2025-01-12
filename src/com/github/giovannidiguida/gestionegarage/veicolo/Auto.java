@@ -1,3 +1,5 @@
+package com.github.giovannidiguida.gestionegarage.veicolo;
+
 public class Auto extends Veicolo {
     private int numeroPosti;
 

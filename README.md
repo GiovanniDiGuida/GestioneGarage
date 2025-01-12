@@ -2,18 +2,18 @@ Esercizio: Sistema di Gestione di Veicoli
 Devi creare un sistema per gestire diversi tipi di veicoli in un garage. Il sistema deve tenere traccia delle informazioni dei veicoli e consentire operazioni specifiche in base al tipo di veicolo.
 
 Requisiti
-Crea una classe base Veicolo con:
+Crea una classe base com.github.giovannidiguida.gestionegarage.veicolo.Veicolo con:
 
 Attributi: marca, modello, anno, targa.
 Un metodo descrizione() che restituisce una stringa con le informazioni del veicolo.
 Un metodo astratto calcola_tassa().
-Crea classi derivate da Veicolo:
+Crea classi derivate da com.github.giovannidiguida.gestionegarage.veicolo.Veicolo:
 
-Auto: aggiunge un attributo numero_posti. Implementa il metodo calcola_tassa() in base a un valore fisso + una tassa per ogni posto.
-Moto: aggiunge un attributo cilindrata. Implementa il metodo calcola_tassa() in base alla cilindrata.
+com.github.giovannidiguida.gestionegarage.veicolo.Auto: aggiunge un attributo numero_posti. Implementa il metodo calcola_tassa() in base a un valore fisso + una tassa per ogni posto.
+com.github.giovannidiguida.gestionegarage.veicolo.Moto: aggiunge un attributo cilindrata. Implementa il metodo calcola_tassa() in base alla cilindrata.
 
 
-Crea una classe Garage per gestire un insieme di veicoli, con:
+Crea una classe com.github.giovannidiguida.gestionegarage.Garage per gestire un insieme di veicoli, con:
 
 Un attributo lista_veicoli che memorizza i veicoli.
 Un metodo aggiungi_veicolo(veicolo) per aggiungere un veicolo al garage.

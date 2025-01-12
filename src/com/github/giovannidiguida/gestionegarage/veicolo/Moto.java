@@ -1,3 +1,5 @@
+package com.github.giovannidiguida.gestionegarage.veicolo;
+
 public class Moto extends Veicolo {
     private int cilindrata;
 

@@ -1,3 +1,5 @@
+package com.github.giovannidiguida.gestionegarage.veicolo;
+
 public abstract class Veicolo implements Comparable<Veicolo> {
     //Mi piace averli separati, ma è irrilevante, in dei contesti però è meglio se si usano annotazioni @Qualcosa
     private String modello;
@@ -17,7 +19,7 @@ public abstract class Veicolo implements Comparable<Veicolo> {
     }
 
     //todo gestione errori
-    //es. "Auto, Fiat, 500, 2020, AB123CD, 4").
+    //es. "com.github.giovannidiguida.gestionegarage.veicolo.Auto, Fiat, 500, 2020, AB123CD, 4").
     public static Veicolo daStringa(String t) {
         Veicolo result;
 
