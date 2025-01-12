@@ -4,6 +4,7 @@ import com.github.giovannidiguida.gestionegarage.exception.TargaVeicoloInesisten
 import com.github.giovannidiguida.gestionegarage.exception.VeicoloDuplicatoException;
 import com.github.giovannidiguida.gestionegarage.veicolo.Veicolo;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -36,8 +37,11 @@ public class Garage {
         return totaleTasse;
     }
 
+    //probabilmente ti chiedi come mai non fai return diretto dei values?
+    //lo faccio perché values non ritorna una copia, ma l'implementazione reale che c'è nella mappa
+    //una modifica potrebbe rompere il sistema, come anche no, ma per sicurezza faccio una copia
     public List<Veicolo> tuttiVeicoli() {
-        return (List<Veicolo>) mappaVeicoli.values();
+        return new ArrayList<>(mappaVeicoli.values());
     }
 
     public List<Veicolo> cercaVeicoli(Predicate<? super Veicolo> filtro) {
