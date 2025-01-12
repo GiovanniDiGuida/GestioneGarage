@@ -19,7 +19,7 @@ public abstract class Veicolo implements Comparable<Veicolo> {
     }
 
     //todo gestione errori
-    //es. "com.github.giovannidiguida.gestionegarage.veicolo.Auto, Fiat, 500, 2020, AB123CD, 4").
+    //es. "Auto, Fiat, 500, 2020, AB123CD, 4").
     public static Veicolo daStringa(String t) {
         Veicolo result;
 

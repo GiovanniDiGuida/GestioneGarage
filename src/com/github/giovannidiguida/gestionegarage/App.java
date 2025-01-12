@@ -6,7 +6,7 @@ import com.github.giovannidiguida.gestionegarage.veicolo.Veicolo;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Benvenuto nel com.github.giovannidiguida.gestionegarage.Garage");
+        System.out.println("Benvenuto nel Garage");
         Garage garage = new Garage();
 
 
@@ -25,7 +25,7 @@ public class App {
             System.out.println(veicolo.getDescrizione());
         }
 
-        /*garage.mappaVeicoli.forEach(com.github.giovannidiguida.gestionegarage.veicolo.Veicolo-> System.out.println(com.github.giovannidiguida.gestionegarage.veicolo.Veicolo.getDescrizione())); un altro modo per stampare e richiamare */
+        /*garage.mappaVeicoli.forEach(Veicolo-> System.out.println(Veicolo.getDescrizione())); un altro modo per stampare e richiamare */
 
         /*for (int i=0;i<garage.mappaVeicoli.size();i++){
             System.out.println(garage.mappaVeicoli.get(i).getDescrizione());
