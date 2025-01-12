@@ -1,39 +1,46 @@
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.function.Predicate;
 
 public class Garage {
+    //vedo che l'es fatto generare male in python chiede un dizionario, quindi cambiamo in hashmap
+    private HashMap<String, Veicolo> mappaVeicoli = new HashMap<>();
 
-    ArrayList<Veicolo> ListaVeicoli = new ArrayList<>();
-
-
-    public boolean AggiungiVeicolo(Veicolo macchina){
-        for(int i=0;i<ListaVeicoli.size();i++){
-            if (ListaVeicoli.get(i).getTarga().equals(macchina.getTarga())){
-                return false;
-            }
+    // todo aggiungere eccezioni
+    public boolean aggiungiVeicolo(Veicolo veicolo) {
+        if (mappaVeicoli.containsKey(veicolo.getTarga())) {
+            return false;
         }
-        ListaVeicoli.add(macchina);
+
+        mappaVeicoli.put(veicolo.getTarga(), veicolo);
         return true;
     }
 
-    public void RimuoviVeicolo (String targa){
-
-        /*ListaVeicoli.removeIf(Veicolo -> Veicolo.getTarga().equals(targa)); removeif espressione lambda (si fa prima) */
-        for(int i=0;i<ListaVeicoli.size();i++){
-            if (ListaVeicoli.get(i).getTarga().equals(targa)){
-                ListaVeicoli.remove(i);
-                return;
-            }
-        }
+    public void rimuoviVeicolo(String targa) {
+        mappaVeicoli.remove(targa);
     }
 
-    public double TasseTotali(){
-        double totaleTasse=0;
-        for(int i=0;i<ListaVeicoli.size();i++){
-            totaleTasse+=ListaVeicoli.get(i).CalcolaTassa();
+    public double tasseTotali() {
+        double totaleTasse = 0;
+        for (int i = 0; i < mappaVeicoli.size(); i++) {
+            totaleTasse += mappaVeicoli.get(i).calcolaTassa();
         }
         return totaleTasse;
     }
 
-    
+    public List<Veicolo> tuttiVeicoli() {
+        return (List<Veicolo>) mappaVeicoli.values();
+    }
+
+    //todo ancora da implementare
+    public List<Veicolo> cercaVeicoli(Predicate<Veicolo> filtro) {
+        return null;
+    }
+
+    //todo ancora da implementare
+    public List<Veicolo> veicoliOrdinati() {
+        return null;
+    }
+
 
 }

@@ -1,16 +1,14 @@
 public class Auto extends Veicolo {
-    
-    int numero_posti;
+    private int numeroPosti;
 
-    public Auto(int NumeroPosti,String modelloInput,String marcaInput,String targaInput,int annoInput, int ChilometraggioInput) {
-        super(modelloInput,marcaInput,targaInput,annoInput,ChilometraggioInput);
-        numero_posti=NumeroPosti;
-
+    public Auto(int NumeroPosti, String modelloInput, String marcaInput, String targaInput, int annoInput, int ChilometraggioInput) {
+        super(modelloInput, marcaInput, targaInput, annoInput, ChilometraggioInput);
+        numeroPosti = NumeroPosti;
     }
 
     @Override
-    public double CalcolaTassa() {
-        double tassa= 40 +(numero_posti*10);
+    public double calcolaTassa() {
+        double tassa = 40 + (numeroPosti * 10);
         return tassa;
     }
 }

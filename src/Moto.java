@@ -1,6 +1,5 @@
 public class Moto extends Veicolo {
-
-    int cilindrata;
+    private int cilindrata;
 
     public Moto(String modelloInput, String marcaInput, String targaInput, int annoInput, int cilindrata, int ChilometraggioInput) {
         super(modelloInput, marcaInput, targaInput, annoInput, ChilometraggioInput);
@@ -8,11 +7,8 @@ public class Moto extends Veicolo {
     }
 
     @Override
-    public double CalcolaTassa() {
-        double tassaMoto=cilindrata*10;
+    public double calcolaTassa() {
+        double tassaMoto = cilindrata * 10;
         return tassaMoto;
     }
-
-
-    
 }
