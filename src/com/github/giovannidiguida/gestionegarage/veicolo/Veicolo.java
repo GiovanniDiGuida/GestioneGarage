@@ -18,21 +18,27 @@ public abstract class Veicolo implements Comparable<Veicolo> {
         this.chilometraggio = chilometraggio;
     }
 
-    //todo gestione errori
-    //es. "Auto, Fiat, 500, 2020, AB123CD, 4").
+    //Deciso di evitare direttamente solo un eventuale crash. Non è specificato nell'es di aggiungere altre eccezioni, ma poteva starci bene nel caso una IllegalArgumentException
+    //Formato auto "Tipo, Modello, Marca, Targa, Anno, Chilometraggio, Posti"
+    //Formato auto "Tipo, Modello, Marca, Targa, Anno, Chilometraggio, Cilindrata"
     public static Veicolo daStringa(String t) {
-        Veicolo result;
+        Veicolo result = null;
 
-        String[] valori = t.split(",");
-        int numeroPosti = Integer.parseInt(valori[5]);
-        int anno = Integer.parseInt(valori[3]);
-        int chilometraggio = Integer.parseInt(valori[6]);
+        try {
+            String[] valori = t.split(",");
+            String modello = valori[1].trim();
+            String marca = valori[2].trim();
+            String targa = valori[3].trim();
+            int anno = Integer.parseInt(valori[4].trim());
+            int chilometraggio = Integer.parseInt(valori[5].trim());
+            int postiCilindrata = Integer.parseInt(valori[6].trim());
 
-        if (valori[0].equalsIgnoreCase("auto")) {
-            result = new Auto(numeroPosti, valori[2], valori[1], valori[4], anno, chilometraggio);
-        } else {
-            int cilindrata = Integer.parseInt(valori[7]);
-            result = new Moto(valori[2], valori[1], valori[4], anno, cilindrata, chilometraggio);
+            if (valori[0].equalsIgnoreCase("auto")) {
+                result = new Auto(modello, marca, targa, anno, chilometraggio, postiCilindrata);
+            } else if (valori[1].equalsIgnoreCase("moto")) {
+                result = new Moto(modello, marca, targa, anno, chilometraggio, postiCilindrata);
+            }
+        } catch (NumberFormatException ignored) {
         }
 
         return result;

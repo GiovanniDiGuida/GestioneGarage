@@ -3,14 +3,13 @@ package com.github.giovannidiguida.gestionegarage.veicolo;
 public class Moto extends Veicolo {
     private int cilindrata;
 
-    public Moto(String modelloInput, String marcaInput, String targaInput, int annoInput, int cilindrata, int ChilometraggioInput) {
-        super(modelloInput, marcaInput, targaInput, annoInput, ChilometraggioInput);
+    public Moto(String modello, String marca, String targa, int anno, int chilometraggio, int cilindrata) {
+        super(modello, marca, targa, anno, chilometraggio);
         this.cilindrata = cilindrata;
     }
 
     @Override
     public double calcolaTassa() {
-        double tassaMoto = cilindrata * 10;
-        return tassaMoto;
+        return cilindrata * 10;
     }
 }

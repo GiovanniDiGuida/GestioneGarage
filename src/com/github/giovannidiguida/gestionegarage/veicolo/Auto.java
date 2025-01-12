@@ -3,14 +3,13 @@ package com.github.giovannidiguida.gestionegarage.veicolo;
 public class Auto extends Veicolo {
     private int numeroPosti;
 
-    public Auto(int NumeroPosti, String modelloInput, String marcaInput, String targaInput, int annoInput, int ChilometraggioInput) {
-        super(modelloInput, marcaInput, targaInput, annoInput, ChilometraggioInput);
-        numeroPosti = NumeroPosti;
+    public Auto(String modello, String marca, String targa, int anno, int chilometraggio, int numeroPosti) {
+        super(modello, marca, targa, anno, chilometraggio);
+        this.numeroPosti = numeroPosti;
     }
 
     @Override
     public double calcolaTassa() {
-        double tassa = 40 + (numeroPosti * 10);
-        return tassa;
+        return 40 + (numeroPosti * 10);
     }
 }

@@ -13,8 +13,8 @@ public class App {
         Moto moto1 = new Moto("Modello Pippo", "Audi", "ABC123", 1900, 3000, 100);
         Moto moto2 = new Moto("Modello Luca", "Idua", "CBA321", 1950, 4000, 100);
 
-        Auto auto1 = new Auto(4, "Modello Catalin", "Dacia", "FRE123", 1998, 100);
-        Auto auto2 = new Auto(5, "Modello Giovanni", "Rubare", "IoRubo123", 1995, 100);
+        Auto auto1 = new Auto("Modello Catalin", "Dacia", "FRE123", 1998, 100, 4);
+        Auto auto2 = new Auto("Modello Giovanni", "Rubare", "IoRubo123", 1995, 100, 5);
 
         garage.aggiungiVeicolo(moto1);
         garage.aggiungiVeicolo(moto2);
