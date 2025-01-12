@@ -12,4 +12,16 @@ public class Auto extends Veicolo {
     public double calcolaTassa() {
         return 40 + (numeroPosti * 10);
     }
+
+    @Override
+    public String toString() {
+        return "Auto{" +
+                "numeroPosti=" + numeroPosti +
+                ", modello='" + modello + '\'' +
+                ", marca='" + marca + '\'' +
+                ", targa='" + targa + '\'' +
+                ", anno=" + anno +
+                ", chilometraggio=" + chilometraggio +
+                '}';
+    }
 }

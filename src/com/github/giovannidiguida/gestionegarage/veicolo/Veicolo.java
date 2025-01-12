@@ -2,12 +2,12 @@ package com.github.giovannidiguida.gestionegarage.veicolo;
 
 public abstract class Veicolo implements Comparable<Veicolo> {
     //Mi piace averli separati, ma è irrilevante, in dei contesti però è meglio se si usano annotazioni @Qualcosa
-    private String modello;
-    private String marca;
-    private String targa;
+    protected String modello;
+    protected String marca;
+    protected String targa;
     //Cambio nomi per rispettare la convenzione Java
-    private int anno;
-    private int chilometraggio;
+    protected int anno;
+    protected int chilometraggio;
 
     //Mi piace avere gli stessi nomi delle variabili d'istanza
     public Veicolo(String modello, String marca, String targa, int anno, int chilometraggio) {

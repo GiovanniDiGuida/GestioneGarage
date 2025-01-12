@@ -12,4 +12,16 @@ public class Moto extends Veicolo {
     public double calcolaTassa() {
         return cilindrata * 10;
     }
+
+    @Override
+    public String toString() {
+        return "Moto{" +
+                "cilindrata=" + cilindrata +
+                ", modello='" + modello + '\'' +
+                ", marca='" + marca + '\'' +
+                ", anno=" + anno +
+                ", chilometraggio=" + chilometraggio +
+                ", targa='" + targa + '\'' +
+                '}';
+    }
 }
