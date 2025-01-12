@@ -1,5 +1,7 @@
 package com.github.giovannidiguida.gestionegarage;
 
+import com.github.giovannidiguida.gestionegarage.exception.TargaVeicoloInesistenteException;
+import com.github.giovannidiguida.gestionegarage.exception.VeicoloDuplicatoException;
 import com.github.giovannidiguida.gestionegarage.veicolo.Veicolo;
 
 import java.util.HashMap;
@@ -10,17 +12,18 @@ public class Garage {
     //vedo che l'es fatto generare male in python chiede un dizionario, quindi cambiamo in hashmap
     private HashMap<String, Veicolo> mappaVeicoli = new HashMap<>();
 
-    // todo aggiungere eccezioni
-    public boolean aggiungiVeicolo(Veicolo veicolo) {
+    //aggiunta eccezione come richiesto da esercizio, anche se in questo caso si poteva evitare era meglio con il boolean
+    public void aggiungiVeicolo(Veicolo veicolo) {
         if (mappaVeicoli.containsKey(veicolo.getTarga())) {
-            return false;
+            throw new VeicoloDuplicatoException(veicolo);
         }
-
         mappaVeicoli.put(veicolo.getTarga(), veicolo);
-        return true;
     }
 
     public void rimuoviVeicolo(String targa) {
+        if (!mappaVeicoli.containsKey(targa)) {
+            throw new TargaVeicoloInesistenteException(targa);
+        }
         mappaVeicoli.remove(targa);
     }
 
