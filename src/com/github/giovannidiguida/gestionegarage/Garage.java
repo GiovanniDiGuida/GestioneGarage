@@ -30,8 +30,8 @@ public class Garage {
 
     public double tasseTotali() {
         double totaleTasse = 0;
-        for (int i = 0; i < mappaVeicoli.size(); i++) {
-            totaleTasse += mappaVeicoli.get(i).calcolaTassa();
+        for (Veicolo value : mappaVeicoli.values()) {
+            totaleTasse += value.calcolaTassa();
         }
         return totaleTasse;
     }
